@@ -1,0 +1,107 @@
+#page-landing{
+    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%); /*O primeiro valor (329.54deg)é um valor numérico de graus (deg é graus). O segundo valor é um hexadecimal é uma cor (#29b6d1) o 0% é para ser um gradiente bem fraquinho. E o terceiro é a cor onde vai terminar (#00c7c7). A leitura é: a transição de cor começa no segundo valor com 0% transicionando em 100% para a terceira cor */
+    text-align: center; /*Alinhar todos os textos no centro*/
+    min-height: 100vh; /*Altura mínima de 100 viewport height*/
+
+    display: flex;
+}
+
+#container{
+    margin: auto;
+
+    width: min(90%, 112rem);
+}
+
+.location, h1, .visit p{ /*Aqui eu coloquei uma classe (.visit) ou seja, procure o elemento com a classe "visit", e dentro da classe "visit, não importa quantos elementos abaixo, procuro todos que forem "p"*/
+    height: 16vh;
+
+}
+
+#logo{
+    animation-delay: 50ms;
+}
+
+.location{
+    animation-delay: 100ms;
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+}
+
+main h1{
+    animation-delay: 150ms;
+    font-size: clamp(4rem, 8vw, 8.4rem);
+}
+
+.visit a{
+    width: 8rem;
+    height: 8rem;
+    background-color: #ffd666;
+
+    border: none; /*Sem borda*/
+    border-radius: 3rem; /*arredondamento*/
+
+    display: flex;
+    align-items: center; /*alinha os itens no eixo X*/
+    justify-content: center; /*alinha os itens no exito Y*/
+
+    margin: auto;
+
+    transition: background .2s;
+    animation-delay: 300ms;
+}
+
+.visit a:hover{
+    background: #96feff;
+}
+
+.visit p{
+    animation-delay: 200ms;
+}
+
+/*Desktop version (versão para desktop)*/
+@media (min-width: 760px){
+    #container{
+        padding: 5rem 2rem;
+        background: url("../images/bg.svg") no-repeat 80% / clamp(30rem, 54vw, 56rem);
+    }
+
+    header{
+        display: flex;
+        align-items: center; /*Só funciona se tiver um display flex ou grid.*/
+        justify-content: space-between; /*colocou um espaço entre eles (entre a logomarca e a location). E também só funcionar com display flex ou grid*/
+    }
+    .location, h1, .visit p{ /*Alguns códigos acima a gente pegou esses mesmos elementos e colocou o height com 16vh, ali funciona para o Mobile, agora vou colocar arrumar já que se deixar como está não consigo alinhar ao centro. */
+        height: initial; /*coloquei como a alturo inicial, ou seja, sem os 16vh de antes.*/
+        text-align: initial; /*mesmo propósito do de cima*/
+    }
+
+    .location{
+        text-align: right; /*alinhamento a direita*/
+    }
+
+    main h1{
+        font-weight: bold;
+        line-height: .88; /*altura da linha*/
+
+        margin: clamp(10%, 9vh, 12%) 0 4rem;
+        
+        width: min(300px, 80%);
+    }
+
+    .visit p{
+        font-size: 2.3rem;
+        line-height: 3.4rem;
+
+        width: clamp(20rem, 20vw, 30rem);
+    }
+
+    .visit{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .visit a{
+        margin: initial;
+    }
+}

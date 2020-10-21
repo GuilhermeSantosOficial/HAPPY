@@ -1,0 +1,162 @@
+#page-orphanage{
+    display: flex;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1; /*Como o #page-orphanage tem o display flex, ao aplicar flex:1 em algum filho dele, ele (flex 1) vai se ajustar em todo o espaço que ele tiver aqui na tela de forma flexível.*/
+}
+
+/*Details*/
+.orphanage-details{
+    width: 43rem;
+    margin: 6.4rem auto;
+    background: #ffffff;
+    border: 1px solid #D3E2E5;
+
+    border-radius: 2rem;
+
+    overflow: hidden;
+}
+
+.orphanage-details > img{ /*O sinal de maior " > " está mandando pegar a imagem que está no primeiro nível. Cuidado, pos se tiver outra img no mesmo nível vai pegar também.*/
+    width: 100%;
+    height: 30rem;
+    object-fit: cover; /*para adaptar imagens, tem o cover que aumento a largura e alturo de forma propocional, tem o contain que deixa alinhado no container.*/
+}
+
+.images{
+    display: grid; /*De forma resumida ele faz colunas multidimensional*/
+    grid-template-columns: repeat(6, 1fr); /*coloco a função repeat no primeiro argumento, coloco a quantidade de vezes que ele vai repertir as colunas e como segundo argumento é o tamanho proporcional, 1fr é uma fração. Das 6 colunas vai colocar uma fraça para cada um.*/ /*Esse grid-template-columns só funcina com o grid*/
+    column-gap: 1.6rem; /*é o espalo entre as 6 colunas*/
+    margin: 16px 40px;
+}
+
+.images button{
+    border: 0;
+    background: none;
+
+    height: 8.8rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    
+    overflow: hidden; /*Limita a caixa do button para que os conteúdos da caixa respeitem tudo o que eu mexer na caixa.*/
+
+    opacity: 0.6;
+
+    transition: opacity .2s;
+}
+
+.images button:hover, 
+.images button.active{
+    opacity: 1;
+}
+
+.images button img{
+    width: 100%; /*nesse caso os 100% é dos 70rem que a gente colocou no .orphanage-details, ou seja, todas as imagens vão se adaptar aos 70rem */
+    height: 8.8rem;
+    object-fit: cover;
+    
+}
+
+.orphanage-details-content{
+    padding: 8rem;
+}
+
+.orphanage-details-content h1{
+    color: #4D6F80;
+    font-size: 5.4rem;
+    line-height: 1.1;
+    margin-bottom: 0.8rem;
+}
+
+.orphanage-details-content p{
+    line-height: 1.8;
+    color: #5C8599;
+    margin-top: 2.4rem;
+}
+
+.orphanage-details-content hr{
+    width: 100%;
+    height: 1px;
+
+    border: 0;
+
+    background: #D3E2E6;
+
+    margin: 6.2rem 0;
+}
+
+.orphanage-details-content h2{
+    font-size: 3.6rem;
+    line-height: 5rem;
+    color: #4D6F80;
+
+}
+
+.open-details{
+    margin-top: 2.4rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    line-height: 1;
+}
+
+.open-details div{
+    padding: 3.2rem 2.4rem;
+}
+
+.open-details img{
+    display: block;
+
+    margin-bottom: 2rem;
+} 
+
+.open-details .hour{
+    background: linear-gradient(149.97deg, #E6F7FB 8.13%, #FFFFFF 92.67%);
+    border: 1px solid #B3DAE2;
+    border-radius: 20px;
+
+    color: #5C8599;
+}
+
+.open-details .open-on-weekends{
+    border-radius: 20px;
+
+    
+}
+
+.open-on-weekends.open{
+    background: linear-gradient(154.16deg, #EDFFF6 7.85%, #FFFFFF 91.03%);
+    border: 1px solid #A1E9C5;
+    color: #37C77F;
+}
+
+.open-on-weekends.closed{
+    background: linear-gradient(154.16deg, #FCF0F4 7.85%, #FFFFFF 91.03%);
+    border: 1px solid #FFBCD4;
+    color: #FF669D;
+}
+
+/* desktop */
+@media (min-width: 760px){
+    .orphanage-details{
+        width: 70rem;
+    }
+
+    .orphanage-details-content h1{
+        margin-bottom: 4.2rem;
+        line-height: 1.5rem;
+    }
+
+    .orphanage-details-content h2{
+        line-height: 1.5rem;
+    }
+
+    .open-details{
+        
+        line-height: 1.5;
+    }
+    
+}

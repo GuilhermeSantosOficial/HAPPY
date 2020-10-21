@@ -1,0 +1,122 @@
+form{
+    width: 45rem;
+    margin: 6.4rem auto;
+    background: #ffffff;
+    border: 1px solid #D3E2E5;
+
+    border-radius: 2rem;
+
+    overflow: hidden;
+
+    padding: 8rem;
+}
+
+fieldset{
+    border: 0;
+}
+
+fieldset + fieldset{ /*Aqui eu vou pegar o irmão, ou seja, tem 2 iguais mas eu quero o segundo então eu faço como ta ai*/
+    margin-top: 8rem;
+
+}
+
+fieldset legend{
+    width: 100%;
+
+    font-size: 3.2rem;
+    line-height: 1.5rem;
+
+    color: #5C8599;
+    font-weight: 700;
+
+    border-bottom: 1px solid #d3e2e5;
+    margin-bottom: 4rem;
+    padding: 2.4rem;
+}
+
+.input-block + .input-block{ /*exemplo: tenho 3 input-block um em baixo do outro,quando eu coloco esse " + " ele só vai pegar os que tiverem um outro input-block em cima, tipo, o primeiro input-block tem qualquer em cima dele? Não, ele é o primeiro então essa seleção não vai pegar ele, mas o segundo tem um input-block em cima, o input-block de ciam do segundo é o primeiro, e o terceiro input-block tem o segundo em cima, então essa seleção vai pegar o segundo e o terceiro.*/
+    margin-top: 2.4rem;
+}
+
+.input-block label{
+    color: #8FA7B3;
+    margin-bottom: .8rem;
+    line-height: 1.5;
+}
+
+.input-block label span{
+    font-size: 1.4rem;
+    color: #8FA7B3;
+    margin-left: 2.4rem;
+    line-height: 1.5;
+}
+
+.input-block input,
+.input-block textarea{
+    width: 100%;
+
+    background: #f5f8fa;
+    border: 1px solid #d3e2e5;
+    border-radius: 2rem;
+    
+    color: #5C8599;
+}
+
+.input-block input{
+    height: 6.4rem;
+    padding: 0 1.6rem;
+}
+
+.input-block input:valid,
+.input-block textarea:valid{
+    border: 1px solid #A1E9C5;
+}
+
+.input-block textarea{
+    height: clamp(12rem, 16rem, 24rem);
+    resize: vertical; /*resize só funciona com o textarea e dar um dominio maior sobre essa parte. Se n tiver esse vertical vai bagunçar o formulário.*/
+    padding: 1.6rem;
+    line-height: 2.8rem;
+
+    /*ATENÇÃO: Existe elemento chamado outline, pesquisem.*/
+}
+
+.input-block.images button{
+    border: 1px dashed #96d2f0;
+    width: 100%;
+    background: #f5f8fa;
+    height: 6.4rem;
+    padding: 0 1.6rem;
+    margin-top: 2.4rem;
+    border-radius: 2rem;
+
+    cursor: pointer;
+}
+
+.new-upload{
+    position: relative;
+}
+
+.new-upload + .new-upload{
+    margin-top: 2.4rem;
+}
+
+.new-upload span{
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    background: #ffffff;
+    border: 1px solid #D3E2E5;
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 10px;
+    padding: .6rem;
+
+    cursor: pointer;
+}
+
+@media (min-width: 760px){
+    form{
+        width: 70rem;
+    }
+}

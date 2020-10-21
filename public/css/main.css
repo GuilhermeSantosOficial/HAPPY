@@ -1,0 +1,26 @@
+* { /*esse asterístico significa Todos os Elementos*/
+    margin: 0; /*o próprio navegador colocar margin, aqui é para tira-lo*/
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh; /*para que o degradê funcione tem que colocar isso, se não tem uma quebra brusca.*/
+    color: white; /*Todos os textos do body para branco*/
+    background-color: #EBF2F5;
+}
+
+:root{
+    font-size: 62.5%;
+}
+
+body, input, button, textarea{
+    font-weight: 400; /*peso da fonte, se colocar 800 por exemplo, vira uma fonte com negrito.*/
+    font-size: 1.8rem; /*fazer com que todas essas tags (body, input, button, textarea) recebam 18 px*/
+    line-height: 1; /*o espaçamento entre linhas*/
+    font-family: 'Nunito', sans-serif; /*CSS rules to specify families lá no google fonts.*/
+
+    /*Ou de um jeito mais contido fica assim:*/
+    /*font: 400 18px/1 'Nunito'. sans-serif;*/ /* <-- assim reescreve tudo que está acima*/
+
+}

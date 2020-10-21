@@ -1,0 +1,107 @@
+#page-orphanages{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+}
+
+aside{
+    width: clamp(24rem, 25vw, 44rem);
+    background: linear-gradient(329.54deg, #15B6D6 0%, #15D6D6 100%);
+    padding: clamp(3rem, 5vw, 8rem); /*um problema! Aqui ele está somando a largura q eu coloquei mais 80px (8rem) e não é isso que eu quero, então lá no main.css vou no * e vou adicionar o box-sizing: border-box, ou seja, o calculo desse caixa vai ser sempre apartir da borda.*/
+    display: flex;
+    flex-direction: column; /*quando colocar o display flex a localização fica lá em cima, então colocando flex-direction: column, deixa todos em colunas e aos adicionar o space-between ele vai lá para baixo.*/
+    justify-content: space-between;
+
+}
+
+aside h1{
+    margin-top: 6.4rem;
+
+    font: 800 clamp(2rem, 5vw, 3.6rem)/1.1 'Nunito', sans-serif;
+}
+
+aside p{
+    margin-top: 2.4rem;
+
+    font: 400 1.6rem/1.5 'Nunito', sans-serif;
+}
+
+aside footer p{
+    margin-top: .8rem;
+}
+
+#mapid{
+    width: 100%;
+    height: 100%;
+
+}
+
+/*button*/
+a.create-orphanage{
+    position: absolute; /*cria um novo contexto, sobrepondo como se fosse uma nova folha por cima da anterior. Com isso o elemento com position:absolute; fica como se essa nova página estivesse vazia.*/
+    right: 4rem; /*O position liberar algumas novas propriedades, como o top, right, left, bottom. O right vai mandar o botão para a direita com 4rem de distância do limite*/
+    bottom: 4rem; /*bottom vai mandar o botão para baixo e mandar ele ficar 4rem de distancia do limite*/
+
+    z-index: 401;
+
+    width: 6.4rem;
+    height: 6.4rem;
+    background: #15C3D6;
+    border: 0;
+    border-radius: 2rem; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background .2s;
+}
+
+a.create-orphanage:hover{
+    background: #17D6EB;
+}
+
+.leaflet-popup-content-wrapper { /*Uma classe que a gente tem aqui para mexer no wrapper do popup*/
+    background: rgba(255, 255, 255, 0.8); /*red, green, blue, alpha(transparencia)*/
+    border-radius: 20px;
+
+}
+
+.leaflet-popup-content{
+    color: #0089A5;
+    margin: .8rem 1.2rem;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leaflet-popup-content a{
+    width: 4rem;
+    height: 4rem;
+    background: #15C3D6;
+    box-shadow: 17.2868px 27.6589px 41.4884px rgba(23, 142, 166, 0.16); /*O primeiro valor é no eixo X ou seja, horizontal, o segundo valor é o deslocamento no eixo Y ou seja, vertical e o terceiro valor é o espumaçado dele (tipo fumaça)*/
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color .2s;
+}
+
+.leaflet-popup-content a:hover{
+    background: #17D6EB;
+}
+
+.leaflet-popup-tip{ /*No popup onde fica o nome do orfanato eu configurei para ficar no lado, mas o botão do nome tá com uma cetinha em baixo que vou retirar aqui*/
+    display: none;
+
+}
+.leaflet-container{
+    font: 700 2rem/1 'Nunito', sans-serif;
+
+    z-index: 5;
+}
